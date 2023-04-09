@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module gathers data from an API"""
-import requests
 import csv
+import requests
 from sys import argv
 
 if __name__ == "__main__":
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # Export to CSV region
     filename = f"{employee_id}.csv"
     with open(filename, mode="w", newline="") as csvfile:
-        writer = csv.writer(csvfile)
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in all_tasks:
             task_completed_status = task.get("completed")
             task_title = task.get("title")
