@@ -42,8 +42,8 @@ if __name__ == "__main__":
                        if todo.get("completed") is True]
     number_of_done_tasks = len(completed_tasks)
 
-    print(f"Employee {employee_name} is done with tasks \
-{number_of_done_tasks}/{total_number_of_tasks}:")
+    print(f"Employee {employee_name} is done with tasks\
+({number_of_done_tasks}/{total_number_of_tasks}):")
 
     for task in completed_tasks:
         print("\t {}".format(task.get("title")))
