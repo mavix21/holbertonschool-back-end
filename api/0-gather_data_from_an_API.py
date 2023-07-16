@@ -23,11 +23,8 @@ if __name__ == "__main__":
     todos = response_todos.json()
     users = response_users.json()
 
-    user_requested = None
-    for user in users:
-        if user.get("id") and str(user.get("id")) == employee_id:
-            user_requested = user
-            break
+    user_requested = next((user for user in users
+                           if str(user.get("id")) == employee_id), None)
 
     if not user_requested:
         print("The employee with id {} does not exist".format(employee_id))
